@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Little Unicorn</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200&family=Patrick+Hand&display=swap" rel="stylesheet">        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+       <style>
+           body{
+               background-color:skyblue;
+           }
+           .txt{
+            font-family: 'Lobster', cursive;
+            color:white
+           }
+           .txt1{
+            font-family: 'Patrick Hand', cursive;
+            color:white;
+           }
+           @media screen and (max-width: 767px){
+           #headpic1 {
+               display: none;
+           }
+           #headpic2 {
+               display: none;
+           }
+            }
+       </style>
+
+       <script>
+            var Uni = [];
+            
+            function addUni() {
+                var txt = {
+                    mes: '',
+                    emmes: '',
+                    noes: '',
+                    ades: '',
+                    showPost: function() {
+                        return this.message;
+                    }
+                }
+                var newMes = document.getElementById('txtFriend').value;
+                var newEmmes = document.getElementById('txtFriendEm').value;
+                var newNoes = document.getElementById('txtFriendNo').value;
+                var newAdes = document.getElementById('txtFriendAd').value;
+                txt.mes = newMes;
+                txt.emmes = newEmmes;
+                txt.noes = newNoes;
+                txt.ades = newAdes;
+                Uni.push(txt);
+                document.getElementById('txtFriend').value = "";
+                document.getElementById('txtFriendEm').value = "";
+                document.getElementById('txtFriendNo').value = "";
+                document.getElementById('txtFriendAd').value = "";
+                writeList();
+            }
+            function writeList() {
+                document.getElementById('Uni').innerHTML = "";
+                for(var i=0; i<Uni.length;i++) {
+                    document.getElementById('Uni').innerHTML += '<li class="list-group-item"><h2>' + Uni[i].mes + '</h2>' + '<p>' + "Email: " + Uni[i].emmes + '</p>' + '<p>' + "Mobile Number: " + Uni[i].noes + '</p>' + '<p>' + "Address: " + Uni[i].ades + '</p></li>';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="txt">
+                <h1 style="text-align:center; margin-top:40px;"><img id="headpic2" src="https://scontent.fmnl17-4.fna.fbcdn.net/v/t1.15752-9/278989610_1039011953364556_4444707486835437593_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFDkyZZkUHLpWfRuMa_EjhPB-_sux3bHzkH7-y7HdsfOSibD7gA2TSz8zCSAn0UY9DqUm6rQkK0VfcQLGOl32Xt&_nc_ohc=IX10tDtWkUsAX8prZfr&tn=ueYlaJrTjs_KDDIm&_nc_ht=scontent.fmnl17-4.fna&oh=03_AVJf9PgGaqkdy4cYAW0D9i5MOb255v4EmkeW7Q4iqHNXrg&oe=6296ADF4" alt="horn" width="200px" float="left">
+                    My Little Unicorn<img id="headpic1" src="https://scontent.fmnl17-4.fna.fbcdn.net/v/t1.15752-9/278989610_1039011953364556_4444707486835437593_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFDkyZZkUHLpWfRuMa_EjhPB-_sux3bHzkH7-y7HdsfOSibD7gA2TSz8zCSAn0UY9DqUm6rQkK0VfcQLGOl32Xt&_nc_ohc=IX10tDtWkUsAX8prZfr&tn=ueYlaJrTjs_KDDIm&_nc_ht=scontent.fmnl17-4.fna&oh=03_AVJf9PgGaqkdy4cYAW0D9i5MOb255v4EmkeW7Q4iqHNXrg&oe=6296ADF4" alt="horn" width="200px" float="left" style="transform: scaleX(-1);"></h1>
+                <div class="input-group my-5">
+                    <label for="txtFriend" class="input-group-text">Unicorn's Name</label>
+                    <input id="txtFriend" class="form-control" name="frdname" placeholder="eg. Anita Bukbukana" style="resize:none;"></input>
+                    <button class="btn btn-outline-secondary" type="button" id="button-add" style="background-color:gainsboro" onclick="addUni()">Add</button>
+                </div>
+                <div class="input-group my-5">
+                    <label for="txtFriendEm" class="input-group-text">Unicorn's Email</label>
+                    <input id="txtFriendEm" class="form-control" name="frdemail" placeholder="eg. bukbukana22@gmail.com" style="resize:none;"></input>
+                </div>
+                <div class="input-group my-5">
+                    <label for="txtFriendNo" class="input-group-text">Unicorn's Number</label>
+                    <input id="txtFriendNo" class="form-control" name="frdno" placeholder="eg. 09493392143" style="resize:none;"></input>
+                </div>
+                <div class="input-group my-5">
+                    <label for="txtFriendAd" class="input-group-text">Unicorn's Address</label>
+                    <input id="txtFriendAd" class="form-control" name="frdadd" placeholder="eg. Lubao, Pampanga" style="resize:none;"></input>
+                </div>
+                <div class="txt1">
+                    <p style="font-size:30px;">Unicorny List<img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t1.15752-9/278585787_699528954799775_7077138248810637367_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFJMYHrWZBNIkf5t0YClk2TyiukOJSCkkfKK6Q4lIKSRya0pffp5l1UYBzVIB_zILehS5d3bbOkkd1wvU9ecQyA&_nc_ohc=fXAEmcwyqK8AX9i-VIj&tn=ueYlaJrTjs_KDDIm&_nc_ht=scontent.fmnl17-1.fna&oh=03_AVKNcxFLzAJLDSEsR8a_hQPjHdRE3tSufE9kLSAiM6yyDg&oe=6295F668" alt="icon" float="left" width="50px">+</p>
+                    <ul class="list-group" id="Uni"></ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
